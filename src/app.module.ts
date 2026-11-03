@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { createObserveModule } from '@nestjs/observe';
-import { AppController } from './app.controller.js';
-import { AppService } from './app.service.js';
+import { AdblockController } from './adblock/adblock.controller.js';
+import { AdblockService } from './adblock/adblock.service.js';
 
 export const { ObserveModule, ObserveInstrument } = createObserveModule();
 
@@ -16,7 +16,7 @@ export const { ObserveModule, ObserveInstrument } = createObserveModule();
       serviceId: 'core',
     }),
   ],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [AdblockController],
+  providers: [AdblockService],
 })
 export class AppModule {}
