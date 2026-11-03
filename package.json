@@ -1,17 +1,51 @@
 {
   "name": "core",
-  "version": "0.0.0",
+  "version": "0.0.1",
+  "description": "",
+  "author": "",
   "private": true,
+  "license": "UNLICENSED",
   "type": "module",
   "scripts": {
-    "dev": "vp dev",
-    "build": "tsc && vp build",
-    "preview": "vp preview"
+    "build": "nest build",
+    "deploy": "nest deploy",
+    "format": "vp fmt \"src/**/*.ts\" \"test/**/*.ts\"",
+    "start": "nest start --env-file .env",
+    "start:dev": "nest start --watch --env-file .env",
+    "start:debug": "nest start --debug --watch --env-file .env",
+    "start:prod": "node dist/main",
+    "lint": "vp lint --type-aware src/ test/",
+    "test": "vp test run",
+    "test:watch": "vp test",
+    "test:cov": "vp test run --coverage",
+    "test:debug": "vp test --inspect-brk --no-file-parallelism",
+    "test:e2e": "vp test run --config ./vitest.config.e2e.ts",
+    "prepare": "vp config"
+  },
+  "dependencies": {
+    "@adguard/agtree": "^4.3.0",
+    "@nestjs/common": "^12.0.1",
+    "@nestjs/core": "^12.0.1",
+    "@nestjs/observe": "^0.3.0",
+    "@nestjs/platform-express": "^12.0.1",
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.1"
   },
   "devDependencies": {
-    "typescript": "~7.0.2",
+    "@nestjs/cli": "^12.0.0",
+    "@nestjs/mau": "^0.2.6",
+    "@nestjs/schematics": "^12.0.0",
+    "@nestjs/testing": "^12.0.1",
+    "@types/express": "^5.0.0",
+    "@types/node": "^24.0.0",
+    "@types/supertest": "^7.0.0",
+    "@vitest/coverage-v8": "catalog:",
+    "source-map-support": "^0.5.21",
+    "supertest": "^7.0.0",
+    "typescript": "^6.0.2",
     "vite": "catalog:",
-    "vite-plus": "catalog:"
+    "vite-plus": "catalog:",
+    "vitest": "catalog:"
   },
   "devEngines": {
     "packageManager": {
